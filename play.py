@@ -21,9 +21,9 @@ REV_CLASS_MAP_RPS = {
 }
 
 REV_CLASS_MAP_OE = {
-    0: "even",
-    1: "odd",
-    2: "none"
+    0:"odd",
+    1:"even",
+    2:"none"
 }
 def mapper_rps(val):
     return REV_CLASS_MAP_RPS[val]
@@ -90,12 +90,6 @@ def play_rps():
         img = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (227, 227))
 
-        time.sleep(1)  # Sleep for 3 seconds
-        cv2.putText(frame, "3",(width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        time.sleep(1)  # Sleep for 3 seconds
-        cv2.putText(frame, "2",(width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        time.sleep(1)  # Sleep for 3 seconds
-        cv2.putText(frame, "1", (width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
         # predict the move made
         pred = model.predict(np.array([img]))
         move_code = np.argmax(pred[0])
@@ -184,15 +178,6 @@ def play_oe():
         img = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (227, 227))
 
-
-        # cv2.putText(frame, "3",(width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        # time.sleep(1)  # Sleep for 3 seconds
-        # cv2.putText(frame, "2",(width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        # time.sleep(1)  # Sleep for 3 seconds
-        # cv2.putText(frame, "1", (width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        # time.sleep(1)  # Sleep for 3 seconds
-        # cv2.putText(frame, "Play", (width // 2 - box_size // 2, box_size + 150), font, 1, (0, 165, 255), 4, cv2.LINE_AA)
-        # time.sleep(1)  # Sleep for 3 seconds
         # predict the move made
         pred = model.predict(np.array([img]))
         move_code = np.argmax(pred[0])

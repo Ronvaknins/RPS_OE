@@ -6,8 +6,16 @@ from keras.utils import np_utils
 from keras.layers import Activation, Dropout, Convolution2D, GlobalAveragePooling2D
 from keras.models import Sequential
 import sys
-import os
 
+import tensorflow as tf
+import os
+import warnings
+import logging
+warnings.filterwarnings("ignore", message=r"Passing", category=FutureWarning)
+warnings.filterwarnings("ignore")
+logging.getLogger('tensorflow').disabled = True
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.get_logger().setLevel('ERROR')
 IMG_SAVE_PATH = 'image_data'
 
 CLASS_MAP_RPS = {

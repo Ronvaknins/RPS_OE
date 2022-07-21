@@ -4,7 +4,7 @@ import sys
 
 def gather_data_rps(num_samples):
     # Initialize the camera
-    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+    cap = cv2.VideoCapture(1)
     # trigger tells us when to start recording
     trigger = False
     # This the ROI size, the size of images saved will be box_size -10
