@@ -11,6 +11,7 @@ Operation:
   # Playing Rock Paper add "rps" to to your commands
   
   to Collect Data - images of your hand with the right option each time select:
+  
   'r' - rock 
   
   'p' - paper 
